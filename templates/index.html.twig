@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        {% for article in pagination %}
+            {% include "article/article.html.twig" %}
+        {% endfor %}
+
+        {% include 'post/pagination.html.twig' %}
+    </div>
+{% endblock %}

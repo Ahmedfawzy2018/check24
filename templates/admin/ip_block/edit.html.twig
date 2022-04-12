@@ -1,0 +1,13 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Edit IpBlock{% endblock %}
+
+{% block body %}
+    <h1>Edit IpBlock</h1>
+
+    {{ include('admin/ip_block/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_ip_block_index') }}">back to list</a>
+
+    {{ include('admin/ip_block/_delete_form.html.twig') }}
+{% endblock %}

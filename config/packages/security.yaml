@@ -1,0 +1,35 @@
+security:
+    encoders:
+        App\Entity\User:
+            algorithm: auto
+
+    providers:
+        doctrine_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        login:
+            anonymous: lazy
+            pattern: ^/
+            guard:
+                authenticator: App\Security\Firewall\AdminAuthenticator
+            provider: doctrine_user_provider
+            logout:
+                path: logout
+                target: login
+
+        restricted:
+            anonymous: lazy
+            pattern: ^/admin
+            guard:
+                authenticator: App\Security\Firewall\AdminAuthenticator
+            provider: doctrine_user_provider
+
+    access_control:
+        - { path: ^/admin(.*), roles: ROLE_ADMIN }

@@ -1,0 +1,17 @@
+<div class="card mb-3">
+    <h5 class="card-header">{{ article.date | date('Y-m-d H:i:s') }} - {{ article.title }}</h5>
+    <div class="card-body">
+        <a href="{{ path('post_detail', { 'slug': article.slug }) }}"
+           class="text-decoration-none text-body">{{ article.text|nl2br }}</a>
+    </div>
+    <div class="card-footer">
+        <div class="row">
+            <div class="col">
+                Autor: {{ article.author.username }}
+            </div>
+            <div class="col text-right">
+                Comments: {{ article.comments|length }}
+            </div>
+        </div>
+    </div>
+</div>

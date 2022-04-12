@@ -1,0 +1,4 @@
+#!/bin/bash -eu
+set -eu
+
+exec /usr/bin/php8.0 "$@"

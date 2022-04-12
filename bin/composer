@@ -1,0 +1,8 @@
+#!/bin/bash -eu
+set -eu
+
+if [ -f "$(dirname "${BASH_SOURCE-$0}")/composer.phar" ]; then
+    exec "$(dirname "${BASH_SOURCE-$0}")/php" "$(dirname "${BASH_SOURCE-$0}")/composer.phar" "$@"
+else
+    exec "$(dirname "${BASH_SOURCE-$0}")/php" "$(which composer)" "$@"
+fi

@@ -1,0 +1,41 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Post index{% endblock %}
+
+{% block body %}
+    <h1>Posts</h1>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Text</th>
+            <th>Date</th>
+            <th>Deleted</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+            <tr>
+                <td>{{ post.id }}</td>
+                <td>{{ post.title }}</td>
+                <td>{{ post.text }}</td>
+                <td>{{ post.date ? post.date|date('Y-m-d') : '' }}</td>
+                <td>{{ post.deleted ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('admin_post_show', {'id': post.id}) }}">show</a>
+                    <a href="{{ path('admin_post_edit', {'id': post.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_post_new') }}">Create new</a>
+{% endblock %}

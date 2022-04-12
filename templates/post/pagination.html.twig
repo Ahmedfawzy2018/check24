@@ -1,0 +1,10 @@
+{# total items count #}
+
+<div class="count">
+  Posts: {{ pagination.getTotalItemCount }}
+</div>
+
+{# display navigation #}
+<div class="navigation">
+  {{ knp_pagination_render(pagination) }}
+</div>

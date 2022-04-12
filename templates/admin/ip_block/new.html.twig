@@ -1,0 +1,11 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}New IpBlock{% endblock %}
+
+{% block body %}
+    <h1>Create new IpBlock</h1>
+
+    {{ include('admin/ip_block/_form.html.twig') }}
+
+    <a href="{{ path('admin_ip_block_index') }}">back to list</a>
+{% endblock %}

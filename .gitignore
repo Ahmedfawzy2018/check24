@@ -1,0 +1,26 @@
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> ignore deployment related files ###
+/etc/*/*.ini.local
+/etc/*/*.cron
+/etc/*/*.conf
+/etc/*/*.sh
+/etc/*/*.yaml
+/etc/*/*.json
+####< ignore deployment related files ###
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+bin/.nvm/
+###< symfony/webpack-encore-bundle ###
